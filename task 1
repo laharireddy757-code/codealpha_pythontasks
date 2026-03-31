@@ -1,0 +1,19 @@
+import random
+
+words = ["apple", "banana", "grape", "mango", "peach"]
+secret_word = random.choice(words)
+
+attempts = 6
+
+while attempts > 0:
+    guess = input("Enter your guess: ")
+
+    if guess == secret_word:
+        print("🎉 Correct! You guessed the word.")
+        break
+    else:
+        attempts -= 1
+        print("❌ Wrong guess. Attempts left:", attempts)
+
+if attempts == 0:
+    print("😢 You lost! The word was:", secret_word)
